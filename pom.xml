@@ -7,7 +7,7 @@
     <artifactId>plugin</artifactId>
     <!-- Baseline Jenkins version you use to build and test the plugin. Users must have this version or newer to run. -->
     <relativePath />
-    <version>4.0</version>
+    <version>4.51</version>
   </parent>
   
   <groupId>com.compuware.jenkins</groupId>
@@ -20,9 +20,8 @@
     <changelist>-SNAPSHOT</changelist>
     <slf4jVersion>1.7.26</slf4jVersion>
     <!-- Baseline Jenkins version you use to build the plugin. Users must have this version or newer to run. -->
-    <jenkins.version>2.277.1</jenkins.version>
+    <jenkins.version>2.346.3</jenkins.version>
     <!-- Java Level to use. Java 7 required when using core >= 1.612 -->
-    <java.level>8</java.level>
   </properties>
   
   <name>BMC AMI DevX Data Studio</name>
@@ -49,6 +48,17 @@
     <url>http://github.com/jenkinsci/${project.artifactId}-plugin</url>
     <tag>HEAD</tag>
   </scm>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>io.jenkins.tools.bom</groupId>
+        <artifactId>bom-2.277.x</artifactId>
+        <version>984.vb5eaac999a7e</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
   <repositories>
     <repository>
@@ -66,12 +76,10 @@
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>credentials</artifactId>
-      <version>2.6.1.1</version>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>cloudbees-folder</artifactId>
-      <version>5.12</version>
     </dependency>
     <dependency>
       <groupId>com.compuware.jenkins</groupId>
